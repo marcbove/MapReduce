@@ -25,6 +25,7 @@ def timing(func):
 @timing
 def countingWords(text):
   text = text.lower()
+  text = text.decode('unicode-escape')
   text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore')
   words = re.findall('\w+', str(text))
   return len(words)
@@ -33,6 +34,7 @@ def countingWords(text):
 @timing
 def wordCount(text):
   text = text.lower()
+  text = text.decode('unicode-escape')
   text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore')
   words = re.findall('\w+', str(text))
   return collections.Counter(words)
