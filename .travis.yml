@@ -9,7 +9,8 @@ install:
     - pip install codecov
     - python setup.py install
 script:
-    - find ./mapreduce -name \*.py -exec pycodestyle {} +
+    - find ./sequencial -name \*.py -exec pep8 --ignore=E402 {} +
+    - find ./mapreduce -name \*.py -exec pep8 --ignore=E402 {} +
 after_success:
     - coveralls
     - codecov
