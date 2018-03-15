@@ -1,14 +1,19 @@
-#!/usr/bin/python
-
-import argparse, re, collections, unicodedata, time
+import re
+import time
+import argparse
+import collections
+import unicodedata
 
 
 def parseArgs():
   parser = argparse.ArgumentParser()
-  group = parser.add_mutually_exclusive_group(required=True)
-  group.add_argument('-C', '--counting-words', help='outputs the total number of words in FILE', action='store_true')
-  group.add_argument('-W', '--word-count', help='outputs the number of occurrences of each word in FILE', action='store_true')
-  parser.add_argument('-b', '--benchmark', help='logs the execution time', action='store_true')
+  egroup = parser.add_mutually_exclusive_group(required=True)
+  egroup.add_argument('-C', '--counting-words',
+    help='outputs the total number of words in FILE', action='store_true')
+  egroup.add_argument('-W', '--word-count',
+    help='outputs the occurrences of each word in FILE', action='store_true')
+  parser.add_argument('-b', '--benchmark',
+    help='logs the execution time', action='store_true')
   parser.add_argument('FILE', help='input file', type=argparse.FileType('r'))
   return parser.parse_args()
 
@@ -49,7 +54,7 @@ if __name__ == '__main__':
   if args.counting_words:
     time_taken, res = countingWords(text)
     print('{} words'.format(res))
-  
+
   if args.word_count:
     time_taken, res = wordCount(text)
     res = [[key, value] for key, value in res.items()]
