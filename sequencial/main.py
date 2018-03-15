@@ -4,6 +4,7 @@ import argparse
 import collections
 import unicodedata
 
+
 def parseArgs():
   parser = argparse.ArgumentParser()
   egroup = parser.add_mutually_exclusive_group(required=True)
