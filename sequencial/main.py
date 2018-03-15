@@ -4,22 +4,15 @@ import argparse
 import collections
 import unicodedata
 
-
 def parseArgs():
   parser = argparse.ArgumentParser()
   egroup = parser.add_mutually_exclusive_group(required=True)
-  egroup.add_argument(
-    '-C', '--counting-words',
-    help='outputs the total number of words in FILE', action='store_true'
-  )
-  egroup.add_argument(
-    '-W', '--word-count',
-    help='outputs the occurrences of each word in FILE', action='store_true'
-  )
-  parser.add_argument(
-    '-b', '--benchmark',
-    help='logs the execution time', action='store_true'
-  )
+  egroup.add_argument('-C', '--counting-words', action='store_true',
+                      help='outputs the total number of words in FILE')
+  egroup.add_argument('-W', '--word-count', action='store_true',
+                      help='outputs the occurrences of each word in FILE')
+  parser.add_argument('-b', '--benchmark', action='store_true',
+                      help='logs the execution time')
   parser.add_argument('FILE', help='input file', type=argparse.FileType('r'))
   return parser.parse_args()
 
@@ -53,7 +46,6 @@ def wordCount(text):
 
 if __name__ == '__main__':
   args = parseArgs()
-
   text = args.FILE.read()
   args.FILE.close()
 
