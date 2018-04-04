@@ -3,9 +3,10 @@ from pyactor.exceptions import TimeoutError
 import sys
 import re
 import unicodedata
+import collections
 
 class Server(object):
-    _ask = {'countingWords'}
+    _ask = {'countingWords', 'wordCount'}
     _tell = []
 
     def countingWords(self, text):
@@ -13,7 +14,18 @@ class Server(object):
         text = text.decode('unicode-escape')
         text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore')
         words = re.findall('\w+', str(text))
+        print '-----------'
         return len(words)
+
+    def wordCount(self, text):
+        text = text.lower()
+        text = text.decode('unicode-escape')
+        text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore')
+        words = re.findall('\w+', str(text))
+        print words
+        print '-------------------------------------------------'
+        print collections.Counter(words)
+        return collections.Counter(words)
 
 
 if __name__ == "__main__":
@@ -33,13 +45,23 @@ if __name__ == "__main__":
     file2 = open(str(sys.argv[2]), 'r')
 
     res = server.countingWords(file.read())
-    res2 = server.countingWords(file2.read())
+    res2 = server2.countingWords(file2.read())
     
     print('{} words'.format(res))
     print('{} words'.format(res2))
 
     print('Total words = {}'.format(res+res2))
     
+    res = server.wordCount(file.read())
+    res = [[key, value] for key, value in res.items()]
+    res.sort(key=lambda x: x[1], reverse=True)
+    res2 = server2.wordCount(file2.read())
+    res2 = [[key, value] for key, value in res.items()]
+    res2.sort(key=lambda x: x[1], reverse=True)
+
+    print('; '.join([e[0] + ', ' + str(e[1]) for e in res]))
+    print('; '.join([e[0] + ', ' + str(e[1]) for e in res2]))
+
     file.close()
     file2.close()
 
