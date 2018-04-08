@@ -3,21 +3,21 @@ sudo: false
 language: python
 
 python:
-    - 2.7
+  - 2.7
 
 install:
-    - pip install -r requirements.txt
-    - pip install pycodestyle
-    - pip install coveralls
-    - pip install codecov
+  - pip install -r requirements.txt
+  - pip install pycodestyle
+  - pip install coveralls
+  - pip install codecov
 
 script:
-    - find ./sequencial -name \*.py -exec pycodestyle --ignore=E111 {} +
-    - find ./mapreduce -name \*.py -exec pycodestyle --ignore=E111 {} +
+  - find ./sequencial -name \*.py -exec pycodestyle --ignore=E111 {} +
+  - find ./mapreduce -name \*.py -exec pycodestyle --ignore=E111 {} +
 
 after_success:
-    - coveralls
-    - codecov -t fd779b81-85b4-45a8-ba5f-5d500c7398cf
+  - coveralls
+  - codecov -t fd779b81-85b4-45a8-ba5f-5d500c7398cf
 
 notifications:
-    email: false
+  email: false
