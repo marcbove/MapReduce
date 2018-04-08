@@ -19,5 +19,5 @@ def startServer():
 
 
 if __name__ == '__main__':
-  thread.start_new_thread(startServer,())
+  thread.start_new_thread(startServer, ())
   print('hi')
