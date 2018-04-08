@@ -12,12 +12,12 @@ install:
   - pip install codecov
 
 script:
-  - find ./sequencial -name \*.py -exec pycodestyle --ignore=E111 {} +
   - find ./mapreduce -name \*.py -exec pycodestyle --ignore=E111 {} +
+  - coverage run ./tests/tests.py
 
 after_success:
   - coveralls
-  - codecov -t fd779b81-85b4-45a8-ba5f-5d500c7398cf
+  - codecov
 
 notifications:
   email: false
