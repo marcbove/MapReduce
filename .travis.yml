@@ -13,7 +13,7 @@ install:
 
 script:
   - find ./mapreduce -name \*.py -exec pycodestyle --ignore=E111 {} +
-  - coverage run tests.py
+  - python -m coverage run test.py
 
 after_success:
   - coveralls
