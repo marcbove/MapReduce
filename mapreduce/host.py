@@ -13,19 +13,10 @@ def create_host_port():
 
 if __name__ == '__main__':
   PORT = 6001
-
   set_context()
-
   host = create_host_port()
-
-  registry = host.lookup_url('http://127.0.0.1:6000/regis', 'Registry', 'registry')
-
-  name = 'host{}'.format(len(registry.get_all()))
-
-  registry.bind(name, host)
-
-  # pprint.pprint(registry.get_all())
-
+  regis = host.lookup_url('http://127.0.0.1:6000/regis', 'Registry', 'registry')
+  name = 'host{}'.format(len(regis.get_all()))
+  regis.bind(name, host)
   print('host listening at port {}'.format(PORT))
-
   serve_forever()
