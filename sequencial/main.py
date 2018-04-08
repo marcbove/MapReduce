@@ -27,22 +27,21 @@ def timing(func):
   return wrapper
 
 
-@timing
-def countingWords(text):
+def findWords(text):
   text = text.lower()
   text = text.decode('unicode-escape')
   text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore')
-  words = re.findall('\w+', str(text))
-  return len(words)
+  return re.findall('\w+', str(text))
+
+
+@timing
+def countingWords(text):
+  return len(findWords(text))
 
 
 @timing
 def wordCount(text):
-  text = text.lower()
-  text = text.decode('unicode-escape')
-  text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore')
-  words = re.findall('\w+', str(text))
-  return collections.Counter(words)
+  return collections.Counter(findWords(text))
 
 
 if __name__ == '__main__':
