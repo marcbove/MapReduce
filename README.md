@@ -3,6 +3,7 @@
 This is a simple [MapReduce](https://en.wikipedia.org/wiki/MapReduce) implementation in python using the [PyActor](https://github.com/pedrotgn/pyactor) library.
 
 [![Build Status](https://travis-ci.org/Constantine-32/mapreduce.svg?branch=master)](https://travis-ci.org/Constantine-32/mapreduce)
+[![codecov](https://codecov.io/gh/Constantine-32/mapreduce/branch/master/graph/badge.svg)](https://codecov.io/gh/Constantine-32/mapreduce)
 [![Coverage Status](https://coveralls.io/repos/github/Constantine-32/mapreduce/badge.svg?branch=master)](https://coveralls.io/github/Constantine-32/mapreduce?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f504a3d2e2da4f3599574fbf5ee381cc)](https://www.codacy.com/app/Constantine-32/mapreduce?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Constantine-32/mapreduce&amp;utm_campaign=Badge_Grade)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
