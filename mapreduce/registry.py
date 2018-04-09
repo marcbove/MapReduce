@@ -1,4 +1,5 @@
 from pyactor.context import set_context, create_host, serve_forever
+import sys
 
 
 class NotFound(Exception):
@@ -34,11 +35,13 @@ class Registry(object):
 
 
 if __name__ == '__main__':
+  if len(sys.argv) == 2:
+    ip = sys.argv[1]
+  else:
+    ip = '127.0.0.1'
+
   set_context()
-  host = create_host('http://127.0.0.1:6000/')
-
+  host = create_host('http://{}:6000/'.format(ip))
   registry = host.spawn('regis', Registry)
-
   print('host listening at port 6000')
-
   serve_forever()
