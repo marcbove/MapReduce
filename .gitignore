@@ -245,3 +245,6 @@ $RECYCLE.BIN/
 /pull.png
 /push.png
 /hybrid.png
+
+# Project Specifics
+mapreduce/temp/
