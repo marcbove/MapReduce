@@ -1,0 +1,33 @@
+small.txt
+	sequential
+		-C	0.00s 0.00s 0.00s 0.00s 0.00s 0.00s 0.00s 0.00s 0.00s 0.00s
+	 	-W	0.00s 0.00s 0.00s 0.00s 0.00s 0.00s 0.00s 0.00s 0.00s 0.00s
+	distributed
+		-C	
+	 	-W	
+
+el_quijote.txt
+	sequential
+		-C	0.13s 0.12s 0.10s 0.10s 0.11s 0.10s 0.10s 0.09s 0.10s 0.10s	
+		-W	0.24s 0.18s 0.23s 0.17s 0.19s 0.22s 0.18s 0.17s 0.18s 0.17s	
+	distributed
+		-C	
+	 	-W
+
+the_bible.txt
+	sequential
+		-C	0.24s 0.26s 0.26s 0.25s 0.21s 0.21s 0.21s 0.27s 0.21s 0.22s
+		-W	0.46s 0.40s 0.40s 0.37s 0.39s 0.39s 0.37s 0.38s 0.38s 0.39s
+	distributed
+		-C	
+	 	-W
+
+sherlock_holmes.txt
+	sequential
+		-C	0.34s 0.31s 0.25s 0.25s 0.32s 0.32s 0.26s 0.26s 0.25s 0.25s
+		-W	0.65s 0.48s 0.50s 0.48s 0.48s 0.48s 0.49s 0.48s 0.48s 0.50s
+	distributed
+		-C	
+	 	-W
+
+
