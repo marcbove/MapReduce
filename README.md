@@ -35,11 +35,10 @@ full of examples. Just check the github page and the documentation for a detaile
 tutorial.
 
 In order to execute the mapreduce function you must follow the following steps:
-1. Open a terminal for each client, in this case 3 and execute the following function in each of them:
+1. Open a terminal for each client, in this case 3 and execute the following function in each of them. Replace i for 0, 1 and 2. Each terminal must have a different number
 ```
 python client_i.py
-```
-Replace i for 0, 1 and 2. Each terminal must have a different number
+````
 2. In another separate terminal, the Apache server will be initialized with the following command:
 ```
 python -m SimpleHTTPServer
