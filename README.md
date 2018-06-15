@@ -33,3 +33,22 @@ repository and installing with:
 If you clone the repository, you will also have access to the tests and a folder
 full of examples. Just check the github page and the documentation for a detailed
 tutorial.
+
+In order to execute the mapreduce function you must follow the following steps:
+1. Open a terminal for each client, in this case 3 and execute the following function in each of them:
+```
+    python client_i.py
+```
+Replace i for 0, 1 and 2. Each terminal must have a different number
+2. In another separate terminal, the Apache server will be initialized with the following command:
+```
+    python -m SimpleHTTPServer
+```
+3. Finally in another terminal the main function will be executed as follows:
+```
+    python host.py
+```
+
+It will ask the name of the file to be treated and the function to be executed, either countWords or wordCount.
+
+If you want to use the code in distributed mode, instead of opening 5 terminals, one laptop would be responsible for initializing the server and running the host.py while each of the other computers would run its client. Do not forget to change the IPs!
