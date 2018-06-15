@@ -37,16 +37,16 @@ tutorial.
 In order to execute the mapreduce function you must follow the following steps:
 1. Open a terminal for each client, in this case 3 and execute the following function in each of them:
 ```
-    python client_i.py
+python client_i.py
 ```
 Replace i for 0, 1 and 2. Each terminal must have a different number
 2. In another separate terminal, the Apache server will be initialized with the following command:
 ```
-    python -m SimpleHTTPServer
+python -m SimpleHTTPServer
 ```
 3. Finally in another terminal the main function will be executed as follows:
 ```
-    python host.py
+python host.py
 ```
 
 It will ask the name of the file to be treated and the function to be executed, either countWords or wordCount.
